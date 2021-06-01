@@ -15,7 +15,8 @@ export function createUser(username, firstname, pw) {
             password: pw,
             income: [],
             expenses: [],
-            saving: []
+            saving: [],
+            month: new Date().getMonth()
         };
         setUser(user);
         loginUser(username, pw);
@@ -24,7 +25,6 @@ export function createUser(username, firstname, pw) {
 
 export function loginUser(username, password) {
     const user = getUser(username);
-    console.log(user);
     if (user) {
         if (user.password === password) {
             localStorage.setItem('CURRENTUSER', username);
@@ -68,6 +68,10 @@ export function logout() {
     localStorage.setItem('CURRENTUSER', []);
 }
 
-export function createBudget() {
 
-}
+
+// export function createBudget() {
+
+// }
+
+

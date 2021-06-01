@@ -21,7 +21,7 @@
 
         <div>
             <a href="../about/index.html">About</a>
-            <a id='logout' href="../index.html">Logout</a>
+            <a id="logout" href="../index.html">Logout</a>
         </div>
     </nav>
 
@@ -33,28 +33,35 @@
                 <form>
                     <label>
                         Name
-                        <input type="text" placeholder="name" />
+                        <input type="text" name='name' placeholder="name" required/>
                     </label>
                     <label>
                         Description
-                        <input type="text" placeholder="description" />
+                        <input type="text" name='description' placeholder="description" />
                     </label>
                     <label>
                         Enter Amount
-                        <input type="text" placeholder="amount" />
+                        <input type="text" name='amount' placeholder="amount" required/>
                     </label>
-                    <select name="category" id="category">
-                        <option value="select"> - Select - </option>
+
+                    <label> Reoccurring?  
+                        <input type="checkbox" id='staticBox' name='staticBox'>
+                    </label>
+                    <select name="surplus" id="surplus-category">  
+                        <option value="select"> --- Select Income --- </option>
                         <option value="bank">Bank</option>
+                        <option value="salary">Salary</option>
+                        <option value="others">others</option>
+                    </select>
+
+                    <select name="deficit" id="deficit-category">
+                        <option value="select"> - Select Expense- </option>
                         <option value="food">Food</option>
                         <option value="bills">Bills</option>
                         <option value="transport">Transport</option>
                         <option value="insurance">Insurance</option>
                         <option value="entertainment">Entertainment</option>
-                      </select>
-                      <select>
-                          
-                      </select>
+                    </select>
                     <button>Enter</button>
                 </form>
             </content>
@@ -68,6 +75,7 @@
     </footer>
 
     <script type="module" src="./dashboard.js"></script>
+    <script type="module" src='../budget.js'></script>
 </body>
 
 </html>
