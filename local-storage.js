@@ -28,6 +28,7 @@ export function loginUser(username, password) {
     if (user) {
         if (user.password === password) {
             localStorage.setItem('CURRENTUSER', username);
+            window.location.href = '../dashboard/index.html';
         }
         else {
             alert('username and/or password is incorrect');

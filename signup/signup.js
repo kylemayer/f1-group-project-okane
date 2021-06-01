@@ -3,15 +3,19 @@ import { getUser, setUser, loginUser, getCurrentUser, createUser } from '../loca
 // createUser('chen', '123', 'Chen');
 // createUser('jacky', '345', 'Jack');
 
-const usernameInput = document.querySelector('#user-name');
-const pwInput = document.querySelector('#pw');
-const nameInput = document.querySelector('#name');
-const button = document.querySelector('button');
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const username = formData.get('username');
+    const name = formData.get('first-name');
+    const password = formData.get('password');
 
 
-button.addEventListener('click', () => {
-    createUser(usernameInput.value, nameInput.value, pwInput.value);
-console.log('success');
+    createUser(username, name, password);
 
+    window.location.href = '../dashboard/index.html';
 
 })

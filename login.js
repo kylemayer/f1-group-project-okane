@@ -3,11 +3,19 @@ import { getUser, setUser, loginUser, getCurrentUser, createUser } from './local
 // createUser('chen', '123', 'Chen');
 // createUser('jacky', '345', 'Jack');
 
-const usernameInput = document.querySelector('#user-name');
-const pwInput = document.querySelector('#pw');
-const button = document.querySelector('button');
+const form = document.querySelector('form');
 
 
-button.addEventListener('click', () => {
-    loginUser(usernameInput.value, pwInput.value);
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const username = formData.get('username');
+    const password = formData.get('password');
+
+
+    loginUser(username, password);
+
+
+
 })
