@@ -6,17 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/home.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <!-- <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/home.css"> -->
+    <title>Dashboard</title>
 </head>
 
 <body>
     <main>
+        <div>
+            <div id="greeting"></div>
+            <content>
+                Manage Your Okane
+                <form>
+                    <label>
+                        Name
+                        <input type="text" placeholder="name" />
+                    </label>
+                    <label>
+                        Description
+                        <input type="text" placeholder="description" />
+                    </label>
+                    <label>
+                        Enter Amount
+                        <input type="text" placeholder="amount" />
+                    </label>
+                    <select name="category" id="category">
+                        <option value="select"> - Select - </option>
+                        <option value="bank">Bank</option>
+                        <option value="food">Food</option>
+                        <option value="bills">Bills</option>
+                        <option value="transport">Transport</option>
+                        <option value="insurance">Insurance</option>
+                        <option value="entertainment">Entertainment</option>
+                      </select>
+                      <select>
+                          
+                      </select>
+                    <button>Enter</button>
+                </form>
+            </content>
+        </div>
+        <div>
+
+        </div>
     </main>
     <footer>
-        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+        <div class="copy gutter-right">&copy; 2021 Okane Project Group</div>
     </footer>
 
     <script type="module" src="./dashboard.js"></script>
