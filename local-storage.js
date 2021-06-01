@@ -64,6 +64,10 @@ export function findById(someArray, Id) {
     return (-1);
 }
 
+export function logout() {
+    localStorage.setItem('CURRENTUSER', []);
+}
+
 export function createBudget() {
 
 }
