@@ -38,6 +38,14 @@ export const user1 = {
                 value: 5000,
                 description: 'dsa', 
             }, 
+            { 
+                id: randomNumber(),
+                name: '', 
+                category: 'insurance',
+                static: true, 
+                value: 500,
+                description: '', 
+            }, 
             {   
                 id: randomNumber(),
                 name: 'AAA', 
