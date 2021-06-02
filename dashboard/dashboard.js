@@ -4,26 +4,17 @@ import { user1 } from '../assets/demo-data.js'; // used to test data
 
 
 const logoutButton = document.querySelector('#logout');
+const user = getCurrentUser(); // user localStorage
+renderUserData(user);
 
+const enterButton = document.querySelector('#enterBtn'); 
 
-// const user = getCurrentUser();
-// const currentMonth = user.month;
-// const totalMoney = getTotalMoney();
-// const totalExpenses = getTotalExpenses();
-
-
-
-logoutButton.addEventListener('click', () => {
-    logout();
-});
-
-
-function renderUserData(user1) {
-    
+function renderUserData(user) {
     const bodyTag = document.querySelector('tbody');
-    const month = user1[5]; 
-    const outterTR = document.createElement('tr');
-    for (let finance in month) {
+    const currentMonth = new Date().getMonth() + 1; 
+    const month = user[currentMonth]; 
+    bodyTag.innerHTML = ''; 
+    for (let finance in month) {  // length 3
         const monthlyFinance = month[finance]; 
         for (let obj of monthlyFinance) {
             const tr = document.createElement('tr');
@@ -38,10 +29,21 @@ function renderUserData(user1) {
             cashValue.textContent = obj.value; 
             subscription.textContent = obj.static; 
             tr.append(companyName, categoryName, cashValue, description, subscription);    
-            outterTR.append(tr);
+            bodyTag.append(tr); 
         }
     }
-    bodyTag.append(outterTR); 
 }
 
-renderUserData(user1);
+
+enterButton.addEventListener('click', () => {
+    const user = getCurrentUser(); // user localStorage
+    renderUserData(user); 
+    window.location.href = './index.html'; 
+}); 
+
+// renderUserData(user); 
+
+
+logoutButton.addEventListener('click', () => {
+    logout();
+});
