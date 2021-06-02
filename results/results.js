@@ -2,11 +2,14 @@ import { getCurrentUser } from '../local-storage.js';
 
 const expensesChart = document.querySelector('#expenses-chart');
 const incomeChart = document.querySelector('#income-chart');
+// const subsChart = document.querySelector('#subs-chart');
 
 expensesChart.style.maxHeight = '500px';
 expensesChart.style.maxWidth = '300px';
 incomeChart.style.maxHeight = '500px';
 incomeChart.style.maxWidth = '300px';
+// subsChart.style.maxHeight = '500px';
+// subsChart.style.maxWidth = '300px';
 
 const month = new Date().getMonth() + 1;
 const user = getCurrentUser();
@@ -133,3 +136,12 @@ new Chart(
     config2
 );
 
+// const subscriptions = {
+//     labels: [],
+//     datasets: [{
+//         label: 'Expenses',
+//         data: [],
+//         backgroundColor: [],
+//         hoverOffset: 20
+//     }]
+// };

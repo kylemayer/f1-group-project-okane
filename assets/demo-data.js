@@ -65,11 +65,27 @@ export const user1 = {
             {
                 id: randomNumber(),
                 name: 'Netflix',  
-                category: 'subscription', 
+                category: 'entertainment', 
                 static: true, 
                 value: 12, 
                 description: ''
-            } 
+            },
+            {
+                id: randomNumber(),
+                name: 'Hulu',  
+                category: 'entertainment', 
+                static: true, 
+                value: 12, 
+                description: ''
+            },
+            {
+                id: randomNumber(),
+                name: 'Spotify',  
+                category: 'entertainment', 
+                static: true, 
+                value: 12, 
+                description: ''
+            }
         ], 
         saving: 
         [
