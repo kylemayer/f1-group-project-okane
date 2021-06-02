@@ -28,25 +28,37 @@ form.addEventListener('submit', (e) => {
     const deficit = formData.get('deficit'); 
     const surplus = formData.get('surplus');    
 
-    console.log(name, description, amount, staticBox, deficit, surplus); 
+    console.log(currentUser[currentMonth].income); 
 
 
     if (deficit === 'select') {
         const userData = {
             id: randomNumber(), 
             name: name, 
-            category: surplus, 
+            category: surplus,
             value: amount, 
             description: description
         };
-    }     
+        currentUser[currentMonth].income.push(userData);
+    }
+    if (surplus === 'select') {
+        const userData = {
+            id: randomNumber(), 
+            name: name, 
+            category: deficit,
+            value: amount, 
+            description: description
+        };
+        currentUser[currentMonth].expenses.push(userData);
+    }
+    setUser(currentUser);
 }); 
 
 export function getTotalMoney() {
     const user = getCurrentUser();
     const currentMonth = user.month;
     let total = 0;
-    for (let item of user.income) {
+    for (let item of user[currentMonth].income) {
         total = total + item.value;
     }
     return (total);
@@ -56,7 +68,7 @@ export function getTotalExpenses() {
     const user = getCurrentUser();
     const currentMonth = user.month;
     let total = 0;
-    for (let item of user.expenses) {
+    for (let item of user[currentMonth].expenses) {
         total = total + item.value;
     }
     return (total);
