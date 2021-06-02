@@ -8,9 +8,7 @@ export const user1 = {
     id: 'accoutname',
     username: 'okane',
     password: 'password',
-
-    may: [
-        income: 
+    income: 
         [
             { 
                 id: randomNumber(),
@@ -73,7 +71,6 @@ export const user1 = {
                 description: ''
             }
         ]
-    ] 
 }; 
 
 
