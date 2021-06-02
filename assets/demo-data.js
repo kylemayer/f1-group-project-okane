@@ -24,7 +24,7 @@ export const user1 = {
                 name: 'Wells Fargo',  
                 category: 'bank',
                 value: 250000, 
-                description: 'aaa' 
+                description: '' 
             }
             // users can create their own object 
         ], 
@@ -32,11 +32,11 @@ export const user1 = {
         [
             { 
                 id: randomNumber(),
-                name: 'Amli', 
+                name: '', 
                 category: 'housing',
                 static: true, 
                 value: 5000,
-                description: 'dsa', 
+                description: '', 
             }, 
             { 
                 id: randomNumber(),
@@ -52,24 +52,40 @@ export const user1 = {
                 category:'insurance',
                 static: true, 
                 value: 1000, 
-                description: 'sa', 
+                description: '', 
             },
             {
                 id: randomNumber(),
-                name: 'Shoprite',
+                name: '',
                 category: 'grocery',
                 static: false, 
                 value: 500, 
-                description: 'aaa'
+                description: ''
             }, 
             {
                 id: randomNumber(),
                 name: 'Netflix',  
-                category: 'subscription', 
+                category: 'entertainment', 
                 static: true, 
                 value: 12, 
-                description: 'aaa'
-            } 
+                description: ''
+            },
+            {
+                id: randomNumber(),
+                name: 'Hulu',  
+                category: 'entertainment', 
+                static: true, 
+                value: 12, 
+                description: ''
+            },
+            {
+                id: randomNumber(),
+                name: 'Spotify',  
+                category: 'entertainment', 
+                static: true, 
+                value: 12, 
+                description: ''
+            }
         ], 
         saving: 
         [
@@ -78,7 +94,7 @@ export const user1 = {
                 name: 'Trip to Australia',
                 category: 'savings', 
                 value: 1000, 
-                description: 'aaa'
+                description: ''
             }
         ]
     } 
