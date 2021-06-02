@@ -14,6 +14,6 @@ export function checkMonth() {
 export function updateMonth() {
     const currentUser = getCurrentUser(); 
     if (!checkMonth()) {
-        currentUser.month = new Date.getMonth(); 
+        currentUser.month = new Date().getMonth(); 
     }
 }
