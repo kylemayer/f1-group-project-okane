@@ -1,9 +1,12 @@
 import { getCurrentUser } from '../local-storage.js';
 
-const chart = document.querySelector('canvas');
+const expensesChart = document.querySelector('#expenses-chart');
+const incomeChart = document.querySelector('#income-chart');
 
-chart.style.maxHeight = '500px';
-chart.style.maxWidth = '300px';
+expensesChart.style.maxHeight = '500px';
+expensesChart.style.maxWidth = '300px';
+incomeChart.style.maxHeight = '500px';
+incomeChart.style.maxWidth = '300px';
 
 const month = new Date().getMonth() + 1;
 const user = getCurrentUser();
@@ -27,44 +30,58 @@ const foodValue = getTotal('food', 'expenses');
 const billsValue = getTotal('bills', 'expenses');
 const transportValue = getTotal('transport', 'expenses');
 const insuranceValue = getTotal('insurance', 'expenses');
-const healthValue = getTotal('health', 'expenses');
+const healthValue = getTotal('medical', 'expenses');
 const entValue = getTotal('entertainment', 'expenses');
 
 function getTotal(category, type) {
     let accumulator = 0;
     for (let item of user[month][type]) {
         if (category === item.category)
-            accumulator = accumulator + item.value;
+            accumulator = accumulator + Number(item.value);
     }
     return accumulator;
 }
 
-//find a way to remove label if there's no data for it
-console.log(foodValue);
 const expenses = {
-    labels: [
-        'Food',
-        'Home Bills',
-        'Transport',
-        'Insurance',
-        'Health',
-        'Entertainment'
-    ],
+    labels: [],
     datasets: [{
         label: 'Expenses',
-        data: [foodValue, billsValue, transportValue, insuranceValue, healthValue, entValue],
-        backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)',
-            'rgb(255, 205, 86)',
-            'rgb(255, 205, 86)',
-            'rgb(255, 205, 86)'
-        ],
+        data: [],
+        backgroundColor: [],
         hoverOffset: 20
     }]
 };
 
+if (foodValue) {
+    expenses.labels.push('Food');
+    expenses.datasets[0].data.push(foodValue);
+    expenses.datasets[0].backgroundColor.push('#0081A7');
+}
+if (billsValue) {
+    expenses.labels.push('Home Bills');
+    expenses.datasets[0].data.push(billsValue);
+    expenses.datasets[0].backgroundColor.push('#00AFB9');
+}
+if (transportValue) {
+    expenses.labels.push('Transport');
+    expenses.datasets[0].data.push(transportValue);
+    expenses.datasets[0].backgroundColor.push('#FDFCDC');
+}
+if (insuranceValue) {
+    expenses.labels.push('Insurance');
+    expenses.datasets[0].data.push(insuranceValue);
+    expenses.datasets[0].backgroundColor.push('#FED9B7');
+}
+if (healthValue) {
+    expenses.labels.push('Health');
+    expenses.datasets[0].data.push(healthValue);
+    expenses.datasets[0].backgroundColor.push('#F07167');
+}
+if (entValue) {
+    expenses.labels.push('Entertainment');
+    expenses.datasets[0].data.push(entValue);
+    expenses.datasets[0].backgroundColor.push('#FBDCDA');
+}
 
 const config = {
     type: 'pie',
@@ -72,6 +89,47 @@ const config = {
 };
 
 new Chart(
-    chart,
+    expensesChart,
     config
 );
+
+const bankTotal = getTotal('bank', 'income');
+const salaryTotal = getTotal('salary', 'income');
+const otherTotal = getTotal('others', 'income');
+
+const income = {
+    labels: [],
+    datasets: [{
+        label: 'Income',
+        data: [],
+        backgroundColor: [],
+        hoverOffset: 20
+    }]
+};
+
+if (bankTotal) {
+    income.labels.push('Bank');
+    income.datasets[0].data.push(bankTotal);
+    income.datasets[0].backgroundColor.push('#0081A7');
+}
+if (salaryTotal) {
+    income.labels.push('Salary');
+    income.datasets[0].data.push(salaryTotal);
+    income.datasets[0].backgroundColor.push('#00AFB9');
+}
+if (otherTotal) {
+    income.labels.push('Other');
+    income.datasets[0].data.push(otherTotal);
+    income.datasets[0].backgroundColor.push('#FDFCDC');
+}
+
+const config2 = {
+    type: 'pie',
+    data: income,
+};
+
+new Chart(
+    incomeChart,
+    config2
+);
+

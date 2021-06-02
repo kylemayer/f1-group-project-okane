@@ -13,9 +13,6 @@ export function createUser(username, firstname, pw) {
             id: username,
             name: firstname,
             password: pw,
-            income: [],
-            expenses: [],
-            saving: [],
             month: new Date().getMonth()
         };
         setUser(user);
