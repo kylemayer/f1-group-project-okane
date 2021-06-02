@@ -24,7 +24,7 @@ export const user1 = {
                 name: 'Wells Fargo',  
                 category: 'bank',
                 value: 250000, 
-                description: '' 
+                description: 'aaa' 
             }
             // users can create their own object 
         ], 
@@ -32,11 +32,11 @@ export const user1 = {
         [
             { 
                 id: randomNumber(),
-                name: '', 
+                name: 'Amli', 
                 category: 'housing',
                 static: true, 
                 value: 5000,
-                description: '', 
+                description: 'dsa', 
             }, 
             { 
                 id: randomNumber(),
@@ -52,15 +52,15 @@ export const user1 = {
                 category:'insurance',
                 static: true, 
                 value: 1000, 
-                description: '', 
+                description: 'sa', 
             },
             {
                 id: randomNumber(),
-                name: '',
+                name: 'Shoprite',
                 category: 'grocery',
                 static: false, 
                 value: 500, 
-                description: ''
+                description: 'aaa'
             }, 
             {
                 id: randomNumber(),
@@ -68,7 +68,7 @@ export const user1 = {
                 category: 'subscription', 
                 static: true, 
                 value: 12, 
-                description: ''
+                description: 'aaa'
             } 
         ], 
         saving: 
@@ -78,7 +78,7 @@ export const user1 = {
                 name: 'Trip to Australia',
                 category: 'savings', 
                 value: 1000, 
-                description: ''
+                description: 'aaa'
             }
         ]
     } 
