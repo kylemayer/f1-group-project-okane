@@ -8,7 +8,9 @@ export const user1 = {
     id: 'accoutname',
     username: 'okane',
     password: 'password',
-    income: 
+    month: 5,
+    5: {
+        income: 
         [
             { 
                 id: randomNumber(),
@@ -71,6 +73,7 @@ export const user1 = {
                 description: ''
             }
         ]
+    } 
 }; 
 
 
@@ -80,4 +83,4 @@ export const user1 = {
 // 1. chase bank 
     // 
 // 2, spend   [1000]
-user1; 
+// 
