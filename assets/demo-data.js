@@ -69,7 +69,7 @@ export const user1 = {
                 static: true, 
                 value: 12, 
                 description: ''
-            }
+            },
             {
                 id: randomNumber(),
                 name: 'Hulu',  
@@ -77,7 +77,7 @@ export const user1 = {
                 static: true, 
                 value: 12, 
                 description: ''
-            }
+            },
             {
                 id: randomNumber(),
                 name: 'Spotify',  

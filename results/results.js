@@ -2,14 +2,14 @@ import { getCurrentUser } from '../local-storage.js';
 
 const expensesChart = document.querySelector('#expenses-chart');
 const incomeChart = document.querySelector('#income-chart');
-// const subsChart = document.querySelector('#subs-chart');
+const subsChart = document.querySelector('#subs-chart');
 
 expensesChart.style.maxHeight = '500px';
 expensesChart.style.maxWidth = '300px';
 incomeChart.style.maxHeight = '500px';
 incomeChart.style.maxWidth = '300px';
-// subsChart.style.maxHeight = '500px';
-// subsChart.style.maxWidth = '300px';
+subsChart.style.maxHeight = '500px';
+subsChart.style.maxWidth = '300px';
 
 const month = new Date().getMonth() + 1;
 const user = getCurrentUser();
@@ -136,12 +136,34 @@ new Chart(
     config2
 );
 
-// const subscriptions = {
-//     labels: [],
-//     datasets: [{
-//         label: 'Expenses',
-//         data: [],
-//         backgroundColor: [],
-//         hoverOffset: 20
-//     }]
-// };
+const subscriptions = {
+    labels: getEntTotal()[0],
+    datasets: [{
+        label: 'Entertainment',
+        data: getEntTotal()[1],
+        backgroundColor: ['#0081A7', '#00AFB9', '#FDFCDC', '#FED9B7', '#F07167', '#FBDCDA'],
+        hoverOffset: 20
+    }]
+};
+
+function getEntTotal() {
+    const nameArray = [];
+    const valueArray = [];
+    for (let item of user[month].expenses) {
+        if (item.category === 'entertainment') {
+            nameArray.push(item.name);
+            valueArray.push(item.value);
+        }
+    }
+    return [nameArray, valueArray];
+}
+
+const config3 = {
+    type: 'pie',
+    data: subscriptions,
+};
+
+new Chart(
+    subsChart,
+    config3
+);
