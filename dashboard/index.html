@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/reset.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="../styles/reset.css"> -->
     <!-- <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/home.css"> -->
     <title>Dashboard</title>
@@ -62,19 +62,23 @@
                         <option value="insurance">Insurance</option>
                         <option value="entertainment">Entertainment</option>
                     </select>
-                    <button>Enter</button>
+                    <button id='enterBtn'>Enter</button>
                 </form>
             </content>
         </div>
-    <table>
-        <tbody id="tBody">
-
-        </tbody>
-    </table> 
-        <div>
-
-        </div>
     </main>
+    <table>
+        <thead>
+            <th>Company</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Subscription</th>
+        </thead> 
+
+        <tbody id="tBody"></tbody>
+    </table> 
+
     <footer>
         <div class="copy gutter-right">&copy; 2021 Okane Project Group</div>
     </footer>
