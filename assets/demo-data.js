@@ -8,8 +8,8 @@ export const user1 = {
     id: 'accoutname',
     username: 'okane',
     password: 'password',
-
-    may: [
+    month: 5,
+    5: {
         income: 
         [
             { 
@@ -73,7 +73,7 @@ export const user1 = {
                 description: ''
             }
         ]
-    ] 
+    } 
 }; 
 
 
