@@ -131,34 +131,86 @@ new Chart(
     config2
 );
 
-const subscriptions = {
-    labels: getEntTotal()[0],
+const holidayTotal = getTotal('holiday', 'savings');
+const rainyTotal = getTotal('rainy-day', 'savings');
+const eduTotal = getTotal('education', 'savings');
+const retTotal = getTotal('retirement', 'savings');
+const otherTotalSav = getTotal('other', 'savings');
+
+const savings = {
+    labels: [],
     datasets: [{
-        label: 'Entertainment',
-        data: getEntTotal()[1],
-        backgroundColor: ['#0081A7', '#00AFB9', '#FDFCDC', '#FED9B7', '#F07167', '#FBDCDA'],
+        label: 'Savings',
+        data: [],
+        backgroundColor: [],
         hoverOffset: 1
     }]
 };
 
-function getEntTotal() {
-    const nameArray = [];
-    const valueArray = [];
-    for (let item of user[month].expenses) {
-        if (item.category === 'entertainment') {
-            nameArray.push(item.name);
-            valueArray.push(item.value);
-        }
-    }
-    return [nameArray, valueArray];
+if (holidayTotal) {
+    savings.labels.push('Holiday');
+    savings.datasets[0].data.push(holidayTotal);
+    savings.datasets[0].backgroundColor.push('#0081A7');
+}
+if (rainyTotal) {
+    savings.labels.push('Rainy Day');
+    savings.datasets[0].data.push(rainyTotal);
+    savings.datasets[0].backgroundColor.push('#00AFB9');
+}
+if (eduTotal) {
+    savings.labels.push('Education');
+    savings.datasets[0].data.push(eduTotal);
+    savings.datasets[0].backgroundColor.push('#FDFCDC');
+}
+if (retTotal) {
+    savings.labels.push('Retirement');
+    savings.datasets[0].data.push(retTotal);
+    savings.datasets[0].backgroundColor.push('#FED9B7');
+}
+if (otherTotalSav) {
+    savings.labels.push('Other');
+    savings.datasets[0].data.push(otherTotalSav);
+    savings.datasets[0].backgroundColor.push('#FBDCDA');
 }
 
 const config3 = {
     type: 'pie',
-    data: subscriptions,
+    data: savings,
 };
 
 new Chart(
     subsChart,
     config3
 );
+
+// const subscriptions = {
+//     labels: getEntTotal()[0],
+//     datasets: [{
+//         label: 'Entertainment',
+//         data: getEntTotal()[1],
+//         backgroundColor: ['#0081A7', '#00AFB9', '#FDFCDC', '#FED9B7', '#F07167', '#FBDCDA'],
+//         hoverOffset: 1
+//     }]
+// };
+
+// function getEntTotal() {
+//     const nameArray = [];
+//     const valueArray = [];
+//     for (let item of user[month].expenses) {
+//         if (item.category === 'entertainment') {
+//             nameArray.push(item.name);
+//             valueArray.push(item.value);
+//         }
+//     }
+//     return [nameArray, valueArray];
+// }
+
+// const config3 = {
+//     type: 'pie',
+//     data: subscriptions,
+// };
+
+// new Chart(
+//     subsChart,
+//     config3
+// );

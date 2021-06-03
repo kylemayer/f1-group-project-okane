@@ -1,7 +1,7 @@
 .user-stats {
     display: flex;
     justify-content: space-evenly;
-    border: darkgray 1px solid;
+    /* border: darkgray 1px solid; */
     text-align: center;
     margin-bottom: 1em;
     align-items: center;
@@ -13,13 +13,14 @@ header {
 }
 
 #userGreeting {
-    border: darkgray 1px solid;
+    /* border: darkgray 1px solid; */
     text-align: center;
     width: 12em;
     height: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 main {
@@ -30,13 +31,18 @@ main {
 canvas {
     max-height: 150px;
     max-width: 150px;
+    margin-bottom: 0.5em;
+    width: 100%;
+    height: 100%;
 }
 
-.card {
-    height: 200px;
-    width: 200px;
+.canvas-div {
     border: darkgray 1px solid;
-    margin-bottom: 0.5em;
+    border-top: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 content {
@@ -49,7 +55,9 @@ content {
 .cards {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 h5 {
@@ -62,6 +70,7 @@ h5 {
     justify-content: left;
     align-items: center;
     padding-left: 0.4em;
+    width: 100%;
 }
 
 table {
@@ -77,4 +86,17 @@ table {
 .right-main-bottom {
     display:grid;
     grid-template-columns: 4fr 1fr;
+}
+
+main h3 {
+    color: #F07167;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
