@@ -92,3 +92,5 @@ export const user1 = {
     // 
 // 2, spend   [1000]
 user1; 
+
+

@@ -1,10 +1,10 @@
-import { logout, getCurrentUser, findById } from '../local-storage.js';
+import { logout, getCurrentUser } from '../local-storage.js';
 import { getTotalMoney, getTotalExpenses } from '../budget.js';
-import { user1 } from '../assets/demo-data.js'; // used to test data
+// import { user1 } from '../assets/demo-data.js'; // used to test data
 
 
 const logoutButton = document.querySelector('#logout');
-const user = getCurrentUser(); // user localStorage
+const user = getCurrentUser(); // user localStorage global
 renderUserData(user);
 
 const enterButton = document.querySelector('#enterBtn'); 
@@ -28,6 +28,8 @@ function renderUserData(user) {
             description.textContent = obj.description;    
             cashValue.textContent = obj.value; 
             subscription.textContent = obj.static; 
+
+
             tr.append(companyName, categoryName, cashValue, description, subscription);    
             bodyTag.append(tr); 
         }
@@ -41,7 +43,13 @@ enterButton.addEventListener('click', () => {
     window.location.href = './index.html'; 
 }); 
 
-// renderUserData(user); 
+const userGreetingDiv = document.querySelector('#userGreeting'); 
+// Greeting Function
+function userGreeting() {
+    userGreetingDiv.textContent = `Welcome ${user.name}`; 
+} 
+userGreeting(); 
+
 
 
 logoutButton.addEventListener('click', () => {
