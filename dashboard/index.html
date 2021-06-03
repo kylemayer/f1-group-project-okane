@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="../styles/common.css">
     <link rel="stylesheet" href="../styles/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/dash-chart.js"></script>
+    <link rel="stylesheet" href="../styles/dash2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        thead {text-align: left; font-weight: bold; font-size: 1.1rem; color: #333} 
-        table tr td {border-bottom: 1px solid lightgray;} 
-    </style>
     <title>Dashboard</title>
 </head>
 
@@ -42,16 +40,18 @@
         </div>
     </nav>
 
-    
+
     <main>
             <content>
+                <div class="greeting-div">
                     <header>
-                        <div id='userGreeting'></div>
+                        <div id='userGreeting' class="greeting"></div>
                     </header>
-                    <h3>Manage Your Okane</h3>
+                </div>
+                    <h3 class="sidebar-title">Manage Your Okane</h3>
                     <form>
                         <label>
-                            Name
+                            Name<br>
                             <input type="text" name='name' placeholder="name" required/>
                         </label>
                         <label>
@@ -59,30 +59,30 @@
                             <input type="text" name='description' placeholder="description" />
                         </label>
                         <label>
-                            Enter Amount
+                            <br>Amount<br>
                             <input type="text" name='amount' placeholder="amount" required/>
                         </label>
-                        
-                        <!-- <label> Reoccurring? 
+
+                        <!-- <label> Reoccurring?
                             <input type="checkbox" id='staticBox' name='staticBox'>
                         </label> -->
 
-                        <select name="surplus" id="surplus-category">
+                        <select name="surplus" id="surplus-category" class="income-drop">
                             <option value="select"> --- Select Income --- </option>
                             <option value="bank">Bank</option>
                             <option value="salary">Salary</option>
                             <option value="others">others</option>
                         </select>
-                        
-                        <select name="deficit" id="deficit-category">
-                            <option value="select"> - Select Expense- </option>
+
+                        <select name="deficit" id="deficit-category" class="expense-drop">
+                            <option value="select"> -- Select Expense -- </option>
                             <option value="food">Food</option>
                             <option value="bills">Home Bills</option>
                             <option value="transport">Transport</option>
                             <option value="insurance">Insurance</option>
                             <option value="medical">Health</option>
                             <option value="entertainment">Entertainment</option>
-                        </select>
+                        </select><br>
                         <button id='enterBtn'>Enter</button>
                     </form>
                 </content>
@@ -101,10 +101,10 @@
                                 <th>Amount</th>
                                 <th>Description</th>
                                 <!-- <th>Subscription</th> -->
-                            </thead> 
-            
+                            </thead>
+
                             <tbody id="tBody"></tbody>
-                        </table> 
+                        </table>
                         <div class="cards">
                             <div class='card' id='expenseDiv'>
                                 <h5>Expenses</h5>
