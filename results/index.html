@@ -6,25 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Charts</title>
 </head>
 <body>
     <nav>
-        <div>
-            <img />
-            <h3>Okane</h3>
+        <div class="left-nav">
+            <div class="left-nav-left">
+                <img class="main-logo" src="../assets/coin.png"/>
+            </div>
+            <div class="left-nav-right">
+                <h3>kane <img class="japanese-okane" src="../assets/okane.png"/></h3>
+            </div>
         </div>
-
-        <div>
-            <a href="../about/index.html">About</a>
-            <a id="logout" href="../index.html">Logout</a>
-            <a id="logout" href="../dashboard/index.html">Dashboard</a>
+        <div class="right-nav">
+            <div class="right-nav-div">
+                <a href="../about/index.html"><img class="about-us-img" src="../assets/aboutus.png" /><figcaption>About</figcaption></a>
+            </div>
+            <div class="right-nav-div">
+                <a href="../dashboard/index.html"><img class="about-us-img" src="../assets/dashboard.png" /><figcaption>Dashboard</figcaption></a>
+            </div>
+            <div>
+                <a id="logout" href="../index.html"><img class="signup-img" src="../assets/logout.png" /><figcaption>Logout</figcaption></a>
+            </div>
         </div>
     </nav>
-    <canvas id="expenses-chart" width="150" height="150"></canvas>
-    <canvas id="income-chart" width="150" height="150"></canvas>
-    <canvas id="subs-chart" width="150" height="150"></canvas>
-    <script src="./results.js" type="module"></script>
+    <main>
+        <canvas id="expenses-chart" ></canvas>
+        <canvas id="income-chart" ></canvas>
+        <canvas id="subs-chart" ></canvas>
+    </main>
+    <footer>
+        <div class="gutter-top-div">
+            <div class="hr-left"></div>
+            <img class="gutter-img" src="../assets/coin.png" />
+            <div class="hr-right"></div>
+        </div>
+        <div class="copyright">&copy; Okane Project Group</div>
+        <script src="./results.js" type="module"></script>
+    </footer>
 </body>
 </html>
