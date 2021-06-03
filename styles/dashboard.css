@@ -1,0 +1,80 @@
+.user-stats {
+    display: flex;
+    justify-content: space-evenly;
+    border: darkgray 1px solid;
+    text-align: center;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+#userGreeting {
+    border: darkgray 1px solid;
+    text-align: center;
+    width: 12em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+canvas {
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.card {
+    height: 200px;
+    width: 200px;
+    border: darkgray 1px solid;
+    margin-bottom: 0.5em;
+}
+
+content {
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+h5 {
+    margin-bottom: -0.3em;
+    background-color: #00AFB9;
+    color: white;
+    font-weight: 500;
+    height: 1.7em;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 0.4em;
+}
+
+table {
+    border: darkgray 1px solid;
+    margin-right: 0.5em;
+}
+
+.right-main {
+    display: grid;
+    grid-template-rows: 3em 4fr;
+}
+
+.right-main-bottom {
+    display:grid;
+    grid-template-columns: 4fr 1fr;
+}

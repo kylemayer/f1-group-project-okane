@@ -51,32 +51,32 @@ const expenses = {
 };
 
 if (foodValue) {
-    expenses.labels.push('Food');
+    // expenses.labels.push('Food');
     expenses.datasets[0].data.push(foodValue);
     expenses.datasets[0].backgroundColor.push('#0081A7');
 }
 if (billsValue) {
-    expenses.labels.push('Home Bills');
+    // expenses.labels.push('Home Bills');
     expenses.datasets[0].data.push(billsValue);
     expenses.datasets[0].backgroundColor.push('#00AFB9');
 }
 if (transportValue) {
-    expenses.labels.push('Transport');
+    // expenses.labels.push('Transport');
     expenses.datasets[0].data.push(transportValue);
     expenses.datasets[0].backgroundColor.push('#FDFCDC');
 }
 if (insuranceValue) {
-    expenses.labels.push('Insurance');
+    // expenses.labels.push('Insurance');
     expenses.datasets[0].data.push(insuranceValue);
     expenses.datasets[0].backgroundColor.push('#FED9B7');
 }
 if (healthValue) {
-    expenses.labels.push('Health');
+    // expenses.labels.push('Health');
     expenses.datasets[0].data.push(healthValue);
     expenses.datasets[0].backgroundColor.push('#F07167');
 }
 if (entValue) {
-    expenses.labels.push('Entertainment');
+    // expenses.labels.push('Entertainment');
     expenses.datasets[0].data.push(entValue);
     expenses.datasets[0].backgroundColor.push('#FBDCDA');
 }
@@ -132,7 +132,7 @@ new Chart(
 );
 
 const subscriptions = {
-    labels: getEntTotal()[0],
+    // labels: getEntTotal()[0],
     datasets: [{
         label: 'Entertainment',
         data: getEntTotal()[1],
