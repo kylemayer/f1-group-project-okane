@@ -16,16 +16,14 @@
     display: none;
 }
 
-img {
-    width: 6em;
+.our-pics img {
+    width: 7em;
+    height: 7em;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.isaac {
-    height: 6em;
+    border: rgba(128, 128, 128, 0.255) 5px double;
 }
 
 .our-pics {
@@ -45,6 +43,7 @@ p {
     margin-bottom: 0.6em;
     max-height: 10em;
     overflow: scroll;
+    min-height: 10em;
 }
 
 p::-webkit-scrollbar {
@@ -71,9 +70,9 @@ section h3 {
     text-shadow: #f070673d 1px 1px;
 }
 
-.sofia {
+/* .sofia, .isaac, .kyle, .chen {
     height: 6.2em;
-}
+} */
 
 .linked {
     margin-right: 0.3em;
@@ -84,6 +83,7 @@ i {
 }
 
 i:hover {
+    transition: 0.4s;
     color: #F07167;
 }
 
@@ -94,3 +94,4 @@ h1 {
     color: #024255;
     text-shadow: rgba(128, 128, 128, 0.282) 3px 3px;
 }
+

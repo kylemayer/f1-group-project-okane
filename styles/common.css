@@ -109,6 +109,7 @@ a {
 
 
 .about-us-img:hover {
+    transition: 0.4s;
     opacity: 0.7;
     background-color: #fbdcda88;
     /* width: 3.7em;
@@ -186,6 +187,7 @@ footer {
 }
 
 .login-img:hover {
+    transition: 0.4s;
     opacity: 0.7;
     background-color: #fbdcda88;
     /* width: 3.7em;
@@ -193,6 +195,7 @@ footer {
 }
 
 .logout-img:hover {
+    transition: 0.4s;
     opacity: 0.7;
     background-color: #fbdcda88;
     /* width: 3.7em;
@@ -200,6 +203,7 @@ footer {
 
 }
 .signup-img:hover {
+    transition: 0.4s;
     opacity: 0.7;
     background-color: #fbdcda88;
     /* width: 3.7em;
