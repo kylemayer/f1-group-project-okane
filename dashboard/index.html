@@ -5,35 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="../styles/reset.css"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/home.css"> -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <title>Dashboard</title>
 </head>
 
 <body>
     <nav>
-        <div>
-            <img />
-            <h3>Okane</h3>
+        <div class="left-nav">
+            <div class="left-nav-left">
+                <img class="main-logo" src="../assets/coin.png"/>
+            </div>
+            <div class="left-nav-right">
+                <h3>kane <img class="japanese-okane" src="../assets/okane.png"/></h3>
+            </div>
         </div>
-
-        <div>
-            <a href="../about/index.html">About</a>
-            <a id="logout" href="../index.html">Logout</a>
+        <div class="right-nav">
+            <div class="right-nav-div">
+                <a href="../about/index.html"><img class="about-us-img" src="../assets/team.png" /><figcaption>About</figcaption></a>
+            </div>
+            <div class="right-nav-div">
+                <a href="../results/index.html"><img class="about-us-img" src="../assets/chart.png" /><figcaption>Charts</figcaption></a>
+            </div>
+            <div>
+                <a id="logout" href="../index.html"><img class="signup-img" src="../assets/logout.png" /><figcaption>Logout</figcaption></a>
+            </div>
         </div>
     </nav>
 
-    <header>
-        <div id='userGreeting'></div>
-        <div class='top-display' id='displayTotal'></div>
-        <div class='top-display' id='displayExpense'></div>
-        <div class='top-display' id='displayIncome'></div>
-        <div class='top-display' id='displaySaving'></div>
-    </header>
-
+    
     <main>
+        <header>
+            <div id='userGreeting'></div>
+            <div class='top-display' id='displayTotal'></div>
+            <div class='top-display' id='displayExpense'></div>
+            <div class='top-display' id='displayIncome'></div>
+            <div class='top-display' id='displaySaving'></div>
+        </header>
         <div>
             <div id="greeting"></div>
             <content>
@@ -75,26 +85,32 @@
                 </form>
             </content>
         </div>
-    <table>
-        <thead>
-            <th>Company</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Description</th>
-            <th>Subscription</th>
-        </thead> 
+        <table>
+            <thead>
+                <th>Company</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Subscription</th>
+            </thead> 
 
         <tbody id="tBody"></tbody>
-    </table> 
-    <div>
-        <div class='card' id='expenseDiv'><a href="">Expenses</a></div>
-        <div class='card' id='incomeDiv'><a href="">Income</a></div>
-        <div class='card' id='savingsDiv'><a href="">Savings</a></div>
-    </div>
-  </main>
+        </table> 
+        <div>
+            <div class='card' id='expenseDiv'><a href="">Expenses</a></div>
+            <div class='card' id='incomeDiv'><a href="">Income</a></div>
+            <div class='card' id='savingsDiv'><a href="">Savings</a></div>
+        </div>
+    </main>
 
     <footer>
-        <div class="copy gutter-right">&copy; 2021 Okane Project Group</div>
+        <div class="gutter-top-div">
+            <div class="hr-left"></div>
+            <img class="gutter-img" src="../assets/coin.png" />
+            <div class="hr-right"></div>
+        </div>
+        <div class="copyright">&copy; Okane Project Group</div>
+        <script type="module" src="./login.js"></script>
     </footer>
 
     <script type="module" src='../budget.js'></script>
