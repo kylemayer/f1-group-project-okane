@@ -24,15 +24,17 @@ function renderUserData(user) {
             const categoryName = document.createElement('td');
             const cashValue = document.createElement('td');
             const description = document.createElement('td');
-            const subscription = document.createElement('td');
+            // const subscription = document.createElement('td');
             categoryName.textContent = obj.category; 
             companyName.textContent = obj.name;
             description.textContent = obj.description;    
-            cashValue.textContent = obj.value; 
-            subscription.textContent = obj.static; 
-
-
-            tr.append(companyName, categoryName, cashValue, description, subscription);    
+            const objValue = obj.value;
+            cashValue.textContent = Number(objValue).toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'USD'
+            }); 
+            // subscription.textContent = obj.static; 
+            tr.append(companyName, categoryName, cashValue, description);    
             bodyTag.append(tr); 
         }
     }

@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="../styles/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <style>
+        thead {text-align: left; font-weight: bold; font-size: 1.1rem; color: #333} 
+        table tr td {border-bottom: 1px solid lightgray;} 
+    </style>
     <title>Dashboard</title>
 </head>
 
@@ -60,9 +63,10 @@
                             <input type="text" name='amount' placeholder="amount" required/>
                         </label>
                         
-                        <label> Reoccurring?
+                        <!-- <label> Reoccurring? 
                             <input type="checkbox" id='staticBox' name='staticBox'>
-                        </label>
+                        </label> -->
+
                         <select name="surplus" id="surplus-category">
                             <option value="select"> --- Select Income --- </option>
                             <option value="bank">Bank</option>
@@ -96,7 +100,7 @@
                                 <th>Category</th>
                                 <th>Amount</th>
                                 <th>Description</th>
-                                <th>Subscription</th>
+                                <!-- <th>Subscription</th> -->
                             </thead> 
             
                             <tbody id="tBody"></tbody>

@@ -59,16 +59,28 @@ function displayTopData(monthsData) {
                 } 
             } else if (key === 'savings') {
                 for (let save of dataObj[key]) {
-                    savings += Number (save.value); 
+                    savings += Number(save.value); 
                 }
             }
         }
     }
     total += income + expenses + savings;  
-    totalP.textContent = `Total: ${total}`; 
-    expensesP.textContent = `Expenses: ${expenses}`; 
-    incomeP.textContent = `Income: ${income}`; 
-    savingsP.textContent = `Savings: ${savings}`; 
+    totalP.textContent = `Total: ${total.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })}`; 
+    expensesP.textContent = `Expenses: ${expenses.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })}`; 
+    incomeP.textContent = `Income: ${income.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })}`; 
+    savingsP.textContent = `Savings: ${savings.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })}`; 
     
     topTotal.append(totalP);
     topExpense.append(expensesP); 
