@@ -68,11 +68,14 @@ img {
 
 a {
     text-decoration: none;
+}
+
+.right-nav + a {
     font-size: small;
     display: flex;
-    justify-content:space-between;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-us-img {
@@ -106,8 +109,8 @@ a {
 .about-us-img:hover {
     opacity: 0.7;
     background-color: #fbdcda88;
-    width: 3.7em;
-    height: 3.7em;
+    /* width: 3.7em;
+    height: 3.7em; */
 }
 
 figcaption {
@@ -185,8 +188,8 @@ footer {
 .login-img:hover {
     opacity: 0.7;
     background-color: #fbdcda88;
-    width: 3.7em;
-    height: 3.7em;
+    /* width: 3.7em;
+    height: 3.7em; */
 }
 
 .logout-img:hover {
@@ -199,8 +202,8 @@ footer {
 .signup-img:hover {
     opacity: 0.7;
     background-color: #fbdcda88;
-    width: 3.7em;
-    height: 3.7em;
+    /* width: 3.7em;
+    height: 3.7em; */
 }
 
 span {

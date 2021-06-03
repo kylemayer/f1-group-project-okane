@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/charts.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/charts.css">
     <title>Charts</title>
@@ -18,14 +19,14 @@
                 <img class="main-logo" src="../assets/coin.png"/>
             </div>
             <div class="left-nav-right">
-                <h3>kane <img class="japanese-okane" src="../assets/okane.png"/></h3>
+                <h3>kane <span>お金</span></h3>
             </div>
         </div>
         <div class="right-nav">
-            <div class="right-nav-div">
+            <div class="right-nav-left">
                 <a href="../about/index.html"><img class="about-us-img" src="../assets/team.png" /><figcaption>About</figcaption></a>
             </div>
-            <div class="right-nav-div">
+            <div class="right-nav-left">
                 <a href="../dashboard/index.html"><img class="about-us-img" src="../assets/dash.png" /><figcaption>Dashboard</figcaption></a>
             </div>
             <div>
@@ -34,9 +35,14 @@
         </div>
     </nav>
     <main>
-        <canvas id="expenses-chart" ></canvas>
-        <canvas id="income-chart" ></canvas>
-        <canvas id="subs-chart" ></canvas>
+        <h1>Your Charts</h1>
+        <content>
+            <div class="expenses-chart" >
+                <canvas id="expenses-chart" ></canvas>
+            </div>
+            <canvas id="income-chart" ></canvas>
+            <canvas id="subs-chart" ></canvas>
+        </content>
     </main>
     <footer>
         <div class="gutter-top-div">
@@ -45,7 +51,7 @@
             <div class="hr-right"></div>
         </div>
         <div class="copyright">&copy; Okane Project Group</div>
-        <script src="./results.js" type="module"></script>
     </footer>
+    <script src="./results.js" type="module"></script>
 </body>
 </html>
