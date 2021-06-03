@@ -106,17 +106,17 @@ const income = {
 };
 
 if (bankTotal) {
-    income.labels.push('Bank');
+    // income.labels.push('Bank');
     income.datasets[0].data.push(bankTotal);
     income.datasets[0].backgroundColor.push('#0081A7');
 }
 if (salaryTotal) {
-    income.labels.push('Salary');
+    // income.labels.push('Salary');
     income.datasets[0].data.push(salaryTotal);
     income.datasets[0].backgroundColor.push('#00AFB9');
 }
 if (otherTotal) {
-    income.labels.push('Other');
+    // income.labels.push('Other');
     income.datasets[0].data.push(otherTotal);
     income.datasets[0].backgroundColor.push('#FDFCDC');
 }
