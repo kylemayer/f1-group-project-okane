@@ -6,6 +6,10 @@ html {
     height: 100%;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     margin-top: 1em;
     margin-left: 3em;
@@ -53,8 +57,6 @@ nav {
     margin-left: -0.2em;
     margin-top: 0.2em;
 }
-
-
 
 .right-nav {
     display: flex;
@@ -107,6 +109,7 @@ a {
 
 
 .about-us-img:hover {
+    transition: 0.4s;
     opacity: 0.7;
     background-color: #fbdcda88;
     /* width: 3.7em;
@@ -135,8 +138,6 @@ footer {
     justify-content: center;
     color:rgb(167, 167, 167);
 }
-
-
 
 .gutter-img {
     width: 2em;
@@ -186,6 +187,7 @@ footer {
 }
 
 .login-img:hover {
+    transition: 0.4s;
     opacity: 0.7;
     background-color: #fbdcda88;
     /* width: 3.7em;
@@ -193,13 +195,15 @@ footer {
 }
 
 .logout-img:hover {
+    transition: 0.4s;
     opacity: 0.7;
     background-color: #fbdcda88;
-    width: 3.7em;
-    height: 3.7em;
+    /* width: 3.7em;
+    height: 3.7em; */
 
 }
 .signup-img:hover {
+    transition: 0.4s;
     opacity: 0.7;
     background-color: #fbdcda88;
     /* width: 3.7em;
@@ -211,3 +215,8 @@ span {
     margin-left: -0.1em;
     opacity: .7;
 }
+
+.name-top {
+    text-shadow: rgba(128, 128, 128, 0.255) 2px 2px;
+}
+
