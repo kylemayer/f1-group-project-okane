@@ -4,7 +4,9 @@ import { getTotalMoney, getTotalExpenses } from '../budget.js';
 
 
 const logoutButton = document.querySelector('#logout');
-const user = getCurrentUser(); // user localStorage global
+
+const user = getCurrentUser(); // user localStorage
+
 renderUserData(user);
 
 const enterButton = document.querySelector('#enterBtn'); 
@@ -43,12 +45,16 @@ enterButton.addEventListener('click', () => {
     window.location.href = './index.html'; 
 }); 
 
+
 const userGreetingDiv = document.querySelector('#userGreeting'); 
 // Greeting Function
 function userGreeting() {
     userGreetingDiv.textContent = `Welcome ${user.name}`; 
 } 
 userGreeting(); 
+
+
+// renderUserData(user); 
 
 
 
