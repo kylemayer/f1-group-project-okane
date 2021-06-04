@@ -194,7 +194,9 @@ button:hover {
 /* styles the table cells */
 table {
     border: darkgray 1px solid;
+    height: 100%;
     margin-right: 0.5em;
+    max-height: 3em;
 }
 
 thead {
@@ -215,6 +217,7 @@ th {
 
 tr {
     height: 2em;
+    max-height: 2em;
 }
 
 table tr td {
