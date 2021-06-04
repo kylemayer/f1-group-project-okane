@@ -8,21 +8,6 @@ const subsChart = document.querySelector('#subs-chart');
 
 const month = new Date().getMonth() + 1;
 const user = getCurrentUser();
-// const incomeCatArray = [];
-// const incomeValArray = [];
-// const expensesCatArray = [];
-// const expensesValArray = [];
-
-// // for (let obj of user[month].expenses) {
-// //     for (let cat of expensesCatArray) {
-// //         if (obj.category === cat) {
-
-// //         }
-// //     }
-// // }
-
-//create array of all the categories, using a loop
-//loop through that array, if the category mataches, accumulate into a new accumulator if it doesn't exist, and if it does, accumulate onto the existing one
 
 const foodValue = getTotal('food', 'expenses');
 const billsValue = getTotal('bills', 'expenses');
@@ -130,39 +115,6 @@ new Chart(
     incomeChart,
     config2
 );
-
-// const subscriptions = {
-//     // labels: getEntTotal()[0],
-//     datasets: [{
-//         label: 'Entertainment',
-//         data: getEntTotal()[1],
-//         backgroundColor: ['#0081A7', '#00AFB9', '#FDFCDC', '#FED9B7', '#F07167', '#FBDCDA'],
-//         hoverOffset: 1
-//     }]
-// };
-
-// function getEntTotal() {
-//     const nameArray = [];
-//     const valueArray = [];
-//     for (let item of user[month].expenses) {
-//         if (item.category === 'entertainment') {
-//             nameArray.push(item.name);
-//             valueArray.push(item.value);
-//         }
-//     }
-//     return [nameArray, valueArray];
-// }
-
-// const config3 = {
-//     type: 'pie',
-//     data: subscriptions,
-// };
-
-// new Chart(
-//     subsChart,
-//     config3
-// );
-
 
 const holidayTotal = getTotal('holiday', 'savings');
 const rainyTotal = getTotal('rainy-day', 'savings');
