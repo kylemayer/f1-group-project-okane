@@ -1,8 +1,5 @@
 import { createUser } from '../local-storage.js';
 
-// createUser('chen', '123', 'Chen');
-// createUser('jacky', '345', 'Jack');
-
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
