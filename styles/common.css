@@ -24,6 +24,10 @@ body {
     grid-template-rows: 1fr 5fr 1fr;
 }
 
+main {
+    margin-bottom: 2em;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -111,7 +115,7 @@ a {
 .about-us-img:hover {
     transition: 0.4s;
     opacity: 0.7;
-    background-color: #fbdcda88;
+    /* background-color: #fbdcda88; */
     /* width: 3.7em;
     height: 3.7em; */
 }
@@ -137,6 +141,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     color:rgb(167, 167, 167);
+    padding-bottom: 2em;
 }
 
 .gutter-img {
@@ -189,7 +194,7 @@ footer {
 .login-img:hover {
     transition: 0.4s;
     opacity: 0.7;
-    background-color: #fbdcda88;
+    /* background-color: #fbdcda88; */
     /* width: 3.7em;
     height: 3.7em; */
 }
@@ -197,7 +202,7 @@ footer {
 .logout-img:hover {
     transition: 0.4s;
     opacity: 0.7;
-    background-color: #fbdcda88;
+    /* background-color: #fbdcda88; */
     /* width: 3.7em;
     height: 3.7em; */
 
@@ -205,7 +210,7 @@ footer {
 .signup-img:hover {
     transition: 0.4s;
     opacity: 0.7;
-    background-color: #fbdcda88;
+    /* background-color: #fbdcda88; */
     /* width: 3.7em;
     height: 3.7em; */
 }

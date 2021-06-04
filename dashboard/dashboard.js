@@ -1,7 +1,4 @@
 import { logout, getCurrentUser } from '../local-storage.js';
-import { getTotalMoney, getTotalExpenses } from '../budget.js';
-// import { user1 } from '../assets/demo-data.js'; // used to test data
-
 
 const logoutButton = document.querySelector('#logout');
 
@@ -9,12 +6,12 @@ const user = getCurrentUser(); // user localStorage
 
 renderUserData(user);
 
-const enterButton = document.querySelector('#enterBtn'); 
+const enterButton = document.querySelector('#enterBtn');
 
 function renderUserData(user) {
     const bodyTag = document.querySelector('tbody');
     const currentMonth = new Date().getMonth() + 1; 
-    const month = user[currentMonth]; 
+    const month = user[currentMonth];
     bodyTag.innerHTML = ''; 
     for (let finance in month) {  // length 3
         const monthlyFinance = month[finance]; 

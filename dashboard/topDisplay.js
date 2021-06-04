@@ -32,8 +32,7 @@ function getMonthlyFinanceDate(user) {
 getMonthlyFinanceDate(user); 
 
 
-const allMonthData = getMonthlyFinanceDate(user); 
-console.log(allMonthData);
+const allMonthData = getMonthlyFinanceDate(user);
 
 function displayTopData(monthsData) {
     let savings = 0; 
