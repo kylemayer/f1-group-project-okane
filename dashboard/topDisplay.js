@@ -1,22 +1,11 @@
 import { getCurrentUser } from '../local-storage.js'; 
 
-//  <header>
-//  <div id='userGreeting'></div>
-//  <div class='top-display' id='displayTotal'></div>
-//  <div class='top-display' id='displayExpense'></div>
-//  <div class='top-display' id='displayIncome'></div>
-//  <div class='top-display' id='displaySaving'></div>
-// </header>
-
 const topTotal = document.querySelector('#displayTotal'); 
 const topExpense = document.querySelector('#displayExpense'); 
 const topIncome = document.querySelector('#displayIncome'); 
 const topSaving = document.querySelector('#displaySaving'); 
 
-
 const user = getCurrentUser(); 
-// displayTopData(); 
-
 
 function getMonthlyFinanceDate(user) {
     const allMonths = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
@@ -31,11 +20,9 @@ function getMonthlyFinanceDate(user) {
 
 getMonthlyFinanceDate(user); 
 
+const allMonthData = getMonthlyFinanceDate(user);
 
-const allMonthData = getMonthlyFinanceDate(user); 
-console.log(allMonthData);
-
-function displayTopData(monthsData) {
+function displayTopData(monthsData) { 
     let savings = 0; 
     let expenses = 0; 
     let income = 0; 
@@ -88,19 +75,6 @@ function displayTopData(monthsData) {
     topSaving.append(savingsP); 
     
 }
-// console.log(allMonthData); 
+
 displayTopData(allMonthData); 
-
-
-
-
-/* 
-[
-    [ 
-        {}, 
-        {}
-    ]
-]
-
-*/ 
 

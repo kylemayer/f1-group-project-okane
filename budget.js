@@ -1,4 +1,4 @@
-import { getCurrentUser, setUser, findById} from './local-storage.js'; 
+import { getCurrentUser, setUser } from './local-storage.js'; 
 
 // updated month
 // get user()
@@ -26,6 +26,7 @@ form.addEventListener('submit', (e) => {
     const amount = formData.get('amount'); 
     const deficit = formData.get('deficit'); 
     const surplus = formData.get('surplus');
+    const savings = formData.get('savings');
      // const staticBox = formData.get('staticBox');     
     // console.log(currentUser[currentMonth].income); 
     function capitalizedName(name) {
@@ -37,17 +38,18 @@ form.addEventListener('submit', (e) => {
     }
     const capitalizedUserName = capitalizedName(name);     
 
-    if (deficit === 'select' && surplus === 'select') {
+    if (deficit === 'select' && surplus === 'select' && savings === 'select') {
         alert('Must select one from the dropdown'); 
         return; 
     }
 
-    if (deficit !== 'select' && surplus !== 'select') {
+    if (deficit !== 'select' && surplus !== 'select' && savings !== 'select') {
         alert('Must select one from the dropdown'); 
         return; 
+    
     }
 
-    if (deficit === 'select') {
+    if (deficit === 'select' && savings === 'select') {
         const userData = {
             id: randomNumber(), 
             name: capitalizedUserName, 
@@ -58,7 +60,7 @@ form.addEventListener('submit', (e) => {
         currentUser[currentMonth].income.push(userData);
     }
 
-    if (surplus === 'select') {
+    if (surplus === 'select' && savings === 'select') {
         const userData = {
             id: randomNumber(), 
             name: capitalizedUserName, 
@@ -67,6 +69,17 @@ form.addEventListener('submit', (e) => {
             description: description
         };
         currentUser[currentMonth].expenses.push(userData);
+    }
+
+    if (surplus === 'select' && deficit === 'select') {
+        const userData = {
+            id: randomNumber(), 
+            name: capitalizedUserName, 
+            category: savings,
+            value: amount, 
+            description: description
+        };
+        currentUser[currentMonth].savings.push(userData);
     }
     setUser(currentUser);
 }); 

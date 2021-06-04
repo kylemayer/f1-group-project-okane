@@ -1,7 +1,3 @@
-import { user1 } from './assets/demo-data.js';
-
-const USER = 'USER';
-
 export function createUser(username, firstname, pw) {
     const name = getUser(username);
     if (name) {
@@ -25,7 +21,7 @@ export function loginUser(username, password) {
     if (user) {
         if (user.password === password) {
             localStorage.setItem('CURRENTUSER', username);
-            window.location.href = '../dashboard/index.html';
+            window.location.href = './dashboard/index.html';
         }
         else {
             alert('username and/or password is incorrect');
@@ -64,11 +60,4 @@ export function findById(someArray, Id) {
 export function logout() {
     localStorage.setItem('CURRENTUSER', []);
 }
-
-
-
-// export function createBudget() {
-
-// }
-
 
