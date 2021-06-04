@@ -2,7 +2,7 @@ import { logout, getCurrentUser } from '../local-storage.js';
 
 const logoutButton = document.querySelector('#logout');
 
-const user = getCurrentUser(); // user localStorage
+const user = getCurrentUser();
 
 renderUserData(user);
 
@@ -13,7 +13,7 @@ function renderUserData(user) {
     const currentMonth = new Date().getMonth() + 1; 
     const month = user[currentMonth];
     bodyTag.innerHTML = ''; 
-    for (let finance in month) {  // length 3
+    for (let finance in month) {
         const monthlyFinance = month[finance]; 
         for (let obj of monthlyFinance) {
             const tr = document.createElement('tr');
@@ -21,16 +21,14 @@ function renderUserData(user) {
             const categoryName = document.createElement('td');
             const cashValue = document.createElement('td');
             const description = document.createElement('td');
-            // const subscription = document.createElement('td');
             categoryName.textContent = obj.category; 
             companyName.textContent = obj.name;
-            description.textContent = obj.description;    
+            description.textContent = obj.description;  
             const objValue = obj.value;
             cashValue.textContent = Number(objValue).toLocaleString('en-US', {
                 style: 'currency',
                 currency: 'USD'
             }); 
-            // subscription.textContent = obj.static; 
             tr.append(companyName, categoryName, cashValue, description);    
             bodyTag.append(tr); 
         }
@@ -39,23 +37,18 @@ function renderUserData(user) {
 
 
 enterButton.addEventListener('click', () => {
-    const user = getCurrentUser(); // user localStorage
+    const user = getCurrentUser();
     renderUserData(user); 
     window.location.href = './index.html'; 
 }); 
 
 
 const userGreetingDiv = document.querySelector('#userGreeting'); 
-// Greeting Function
+
 function userGreeting() {
     userGreetingDiv.textContent = `Welcome ${user.name}`; 
 } 
 userGreeting(); 
-
-
-// renderUserData(user); 
-
-
 
 logoutButton.addEventListener('click', () => {
     logout();
