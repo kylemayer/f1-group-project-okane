@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/common.css">
     <link rel="stylesheet" href="../styles/dashboard.css">
-    <script src="https://cdn.jsdelivr.net/npm/dash-chart.js"></script>
-    <link rel="stylesheet" href="../styles/dash2.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/dash-chart.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Dashboard</title>
@@ -40,7 +39,6 @@
         </div>
     </nav>
 
-
     <main>
             <content>
                 <div class="greeting-div">
@@ -48,79 +46,114 @@
                         <div id='userGreeting' class="greeting"></div>
                     </header>
                 </div>
-                    <h3 class="sidebar-title">Manage Your Okane</h3>
-                    <form>
-                        <label>
-                            Name<br>
-                            <input type="text" name='name' placeholder="name" required/>
-                        </label>
-                        <label>
-                            Description
-                            <input type="text" name='description' placeholder="description" />
-                        </label>
-                        <label>
-                            <br>Amount<br>
-                            <input type="text" name='amount' placeholder="amount" required/>
-                        </label>
-
-                        <!-- <label> Reoccurring?
-                            <input type="checkbox" id='staticBox' name='staticBox'>
-                        </label> -->
-
-                        <select name="surplus" id="surplus-category" class="income-drop">
-                            <option value="select"> --- Select Income --- </option>
-                            <option value="bank">Bank</option>
-                            <option value="salary">Salary</option>
-                            <option value="others">others</option>
-                        </select>
-
-                        <select name="deficit" id="deficit-category" class="expense-drop">
-                            <option value="select"> -- Select Expense -- </option>
-                            <option value="food">Food</option>
-                            <option value="bills">Home Bills</option>
-                            <option value="transport">Transport</option>
-                            <option value="insurance">Insurance</option>
-                            <option value="medical">Health</option>
-                            <option value="entertainment">Entertainment</option>
-                        </select><br>
-                        <button id='enterBtn'>Enter</button>
-                    </form>
-                </content>
-                <div class="right-main">
-                    <div class="user-stats">
-                        <div class='top-display' id='displayTotal'></div>
-                        <div class='top-display' id='displayExpense'></div>
-                        <div class='top-display' id='displayIncome'></div>
-                        <div class='top-display' id='displaySaving'></div>
+                <div class="form-div">
+                    <div class="manage">
+                        <h3 class="sidebar-title">Manage Your Okane</h3>
+                        <!-- <img src="../assets/wallet.png" /> -->
                     </div>
-                    <div class="right-main-bottom">
-                        <table>
-                            <thead>
-                                <th>Company</th>
-                                <th>Category</th>
-                                <th>Amount</th>
-                                <th>Description</th>
-                                <!-- <th>Subscription</th> -->
-                            </thead>
+                    <div class="input-form">
+                        <form>
+                            <div class="inputs">
+                                <label>
+                                    <h6>
+                                        Name
+                                    </h6>
+                                    <input type="text" name='name' placeholder="name" required/>
+                                </label>
+                                <label>
+                                    <h6>
+                                        Description
+                                    </h6>
+                                    <input type="text" name='description' placeholder="description" />
+                                </label>
+                                <label>
+                                    <h6>
+                                        Amount
+                                    </h6>
+                                    <input type="number" name='amount' placeholder="amount" required/>
+                                </label>
+                            </div>
+    
+                            <!-- <label> Reoccurring?
+                                <input type="checkbox" id='staticBox' name='staticBox'>
+                            </label> -->
+                            <div class="selects">
+                                <select name="surplus" id="surplus-category" class="income-drop">
+                                    <option value="select"> --- Select Income --- </option>
+                                    <option value="bank">Bank</option>
+                                    <option value="salary">Salary</option>
+                                    <option value="others">Other</option>
+                                </select>
+        
+                                <select name="deficit" id="deficit-category" class="expense-drop">
+                                    <option value="select"> --- Select Expense --- </option>
+                                    <option value="food">Food</option>
+                                    <option value="bills">Home Bills</option>
+                                    <option value="transport">Transport</option>
+                                    <option value="insurance">Insurance</option>
+                                    <option value="medical">Health</option>
+                                    <option value="entertainment">Entertainment</option>
+                                </select>
+        
+                                <select name="savings" id="savings-category" class="savings-drop">
+                                    <option value="select"> --- Select Savings --- </option>
+                                    <option value="holiday">Holiday</option>
+                                    <option value="rainy-day">Rainy Day</option>
+                                    <option value="education">Education</option>
+                                    <option value="retirement">Retirement</option>
+                                    <option value="other">Oher</option>
+                                </select>
+                                <br>
+                                <button id='enterBtn'>Enter</button>
+                            </div>
+                        </form>
+                        <div class="side-bar-img">
+                            <!-- <img src="../assets/cash.png"/> -->
+                        </div>
+                    </div>
+                </div>
+            </content>
+            <div class="right-main">
+                <div class="user-stats">
+                    <div class='top-display' id='displayTotal'></div>
+                    <div class='top-display' id='displayExpense'></div>
+                    <div class='top-display' id='displayIncome'></div>
+                    <div class='top-display' id='displaySaving'></div>
+                </div>
+                <div class="right-main-bottom">
+                    <table>
+                        <thead>
+                            <th>Company</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <!-- <th>Subscription</th> -->
+                        </thead>
 
-                            <tbody id="tBody"></tbody>
-                        </table>
-                        <div class="cards">
-                            <div class='card' id='expenseDiv'>
-                                <h5>Expenses</h5>
+                        <tbody id="tBody"></tbody>
+                    </table>
+                    <div class="cards">
+                        <div class='card' id='expenseDiv'>
+                            <h5>Expenses</h5>
+                            <div class="canvas-div">
                                 <canvas id="expenses-chart" ></canvas>
                             </div>
-                            <div class='card' id='incomeDiv'>
-                                <h5>Income</h5>
+                        </div>
+                        <div class='card' id='incomeDiv'>
+                            <h5>Income</h5>
+                            <div class="canvas-div">
                                 <canvas id="income-chart" ></canvas>
                             </div>
-                            <div class='card' id='savingsDiv'>
-                                <h5>Entertainment</h5>
+                        </div>
+                        <div class='card' id='savingsDiv'>
+                            <h5>Savings</h5>
+                            <div class="canvas-div">
                                 <canvas id="subs-chart" ></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
     </main>
 
     <footer>

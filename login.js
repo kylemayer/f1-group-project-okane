@@ -1,4 +1,4 @@
-import { getUser, setUser, loginUser, getCurrentUser, createUser } from './local-storage.js';
+import { loginUser } from './local-storage.js';
 
 // createUser('chen', '123', 'Chen');
 // createUser('jacky', '345', 'Jack');
@@ -18,4 +18,4 @@ form.addEventListener('submit', (e) => {
 
 
 
-})
+});
