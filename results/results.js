@@ -8,21 +8,6 @@ const subsChart = document.querySelector('#subs-chart');
 
 const month = new Date().getMonth() + 1;
 const user = getCurrentUser();
-// const incomeCatArray = [];
-// const incomeValArray = [];
-// const expensesCatArray = [];
-// const expensesValArray = [];
-
-// // for (let obj of user[month].expenses) {
-// //     for (let cat of expensesCatArray) {
-// //         if (obj.category === cat) {
-
-// //         }
-// //     }
-// // }
-
-//create array of all the categories, using a loop
-//loop through that array, if the category mataches, accumulate into a new accumulator if it doesn't exist, and if it does, accumulate onto the existing one
 
 const foodValue = getTotal('food', 'expenses');
 const billsValue = getTotal('bills', 'expenses');
@@ -53,32 +38,32 @@ const expenses = {
 if (foodValue) {
     expenses.labels.push('Food');
     expenses.datasets[0].data.push(foodValue);
-    expenses.datasets[0].backgroundColor.push('#0081A7');
+    expenses.datasets[0].backgroundColor.push('#FFADAD');
 }
 if (billsValue) {
     expenses.labels.push('Home Bills');
     expenses.datasets[0].data.push(billsValue);
-    expenses.datasets[0].backgroundColor.push('#00AFB9');
+    expenses.datasets[0].backgroundColor.push('#FFD6A5');
 }
 if (transportValue) {
     expenses.labels.push('Transport');
     expenses.datasets[0].data.push(transportValue);
-    expenses.datasets[0].backgroundColor.push('#FDFCDC');
+    expenses.datasets[0].backgroundColor.push('#CAFFBF');
 }
 if (insuranceValue) {
     expenses.labels.push('Insurance');
     expenses.datasets[0].data.push(insuranceValue);
-    expenses.datasets[0].backgroundColor.push('#FED9B7');
+    expenses.datasets[0].backgroundColor.push('#9BF6FF');
 }
 if (healthValue) {
     expenses.labels.push('Health');
     expenses.datasets[0].data.push(healthValue);
-    expenses.datasets[0].backgroundColor.push('#F07167');
+    expenses.datasets[0].backgroundColor.push('#FFC6FF');
 }
 if (entValue) {
     expenses.labels.push('Entertainment');
     expenses.datasets[0].data.push(entValue);
-    expenses.datasets[0].backgroundColor.push('#FBDCDA');
+    expenses.datasets[0].backgroundColor.push('#BDB2FF');
 }
 
 const config = {
@@ -108,17 +93,17 @@ const income = {
 if (bankTotal) {
     income.labels.push('Bank');
     income.datasets[0].data.push(bankTotal);
-    income.datasets[0].backgroundColor.push('#0081A7');
+    income.datasets[0].backgroundColor.push('#4ECDC4');
 }
 if (salaryTotal) {
     income.labels.push('Salary');
     income.datasets[0].data.push(salaryTotal);
-    income.datasets[0].backgroundColor.push('#00AFB9');
+    income.datasets[0].backgroundColor.push('#FF6B6B');
 }
 if (otherTotal) {
     income.labels.push('Other');
     income.datasets[0].data.push(otherTotal);
-    income.datasets[0].backgroundColor.push('#FDFCDC');
+    income.datasets[0].backgroundColor.push('#FFE66D');
 }
 
 const config2 = {
@@ -150,27 +135,27 @@ const savings = {
 if (holidayTotal) {
     savings.labels.push('Holiday');
     savings.datasets[0].data.push(holidayTotal);
-    savings.datasets[0].backgroundColor.push('#0081A7');
+    savings.datasets[0].backgroundColor.push('#006BA6');
 }
 if (rainyTotal) {
     savings.labels.push('Rainy Day');
     savings.datasets[0].data.push(rainyTotal);
-    savings.datasets[0].backgroundColor.push('#00AFB9');
+    savings.datasets[0].backgroundColor.push('#0496FF');
 }
 if (eduTotal) {
     savings.labels.push('Education');
     savings.datasets[0].data.push(eduTotal);
-    savings.datasets[0].backgroundColor.push('#FDFCDC');
+    savings.datasets[0].backgroundColor.push('#FFBC42');
 }
 if (retTotal) {
     savings.labels.push('Retirement');
     savings.datasets[0].data.push(retTotal);
-    savings.datasets[0].backgroundColor.push('#FED9B7');
+    savings.datasets[0].backgroundColor.push('#D81159');
 }
 if (otherTotalSav) {
     savings.labels.push('Other');
     savings.datasets[0].data.push(otherTotalSav);
-    savings.datasets[0].backgroundColor.push('#FBDCDA');
+    savings.datasets[0].backgroundColor.push('#8F2D56');
 }
 
 const config3 = {
@@ -182,35 +167,3 @@ new Chart(
     subsChart,
     config3
 );
-
-// const subscriptions = {
-//     labels: getEntTotal()[0],
-//     datasets: [{
-//         label: 'Entertainment',
-//         data: getEntTotal()[1],
-//         backgroundColor: ['#0081A7', '#00AFB9', '#FDFCDC', '#FED9B7', '#F07167', '#FBDCDA'],
-//         hoverOffset: 1
-//     }]
-// };
-
-// function getEntTotal() {
-//     const nameArray = [];
-//     const valueArray = [];
-//     for (let item of user[month].expenses) {
-//         if (item.category === 'entertainment') {
-//             nameArray.push(item.name);
-//             valueArray.push(item.value);
-//         }
-//     }
-//     return [nameArray, valueArray];
-// }
-
-// const config3 = {
-//     type: 'pie',
-//     data: subscriptions,
-// };
-
-// new Chart(
-//     subsChart,
-//     config3
-// );

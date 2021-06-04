@@ -1,7 +1,3 @@
-import { user1 } from './assets/demo-data.js';
-
-const USER = 'USER';
-
 export function createUser(username, firstname, pw) {
     const name = getUser(username);
     if (name) {
@@ -64,11 +60,4 @@ export function findById(someArray, Id) {
 export function logout() {
     localStorage.setItem('CURRENTUSER', []);
 }
-
-
-
-// export function createBudget() {
-
-// }
-
 
