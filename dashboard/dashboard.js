@@ -1,5 +1,5 @@
 import { logout, getCurrentUser } from '../local-storage.js';
-import { getTotalMoney, getTotalExpenses } from '../budget.js';
+// import { getTotalMoney, getTotalExpenses } from '../budget.js';
 // import { user1 } from '../assets/demo-data.js'; // used to test data
 
 
@@ -27,7 +27,8 @@ function renderUserData(user) {
             // const subscription = document.createElement('td');
             categoryName.textContent = obj.category; 
             companyName.textContent = obj.name;
-            description.textContent = obj.description;    
+            description.textContent = obj.description; 
+            // description.textContent = obj.subscription;    
             const objValue = obj.value;
             cashValue.textContent = Number(objValue).toLocaleString('en-US', {
                 style: 'currency',
