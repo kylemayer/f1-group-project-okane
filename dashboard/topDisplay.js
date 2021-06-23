@@ -33,6 +33,7 @@ function displayTopData(monthsData) {
     const incomeP = document.createElement('p'); 
     const savingsP = document.createElement('p'); 
 
+    // very slick work here! loops inside of loops are usually a bad idea (the only performance hit that most devs really need to think about), but this is pretty readable
     for (let dataObj of monthsData) {
         const keys = Object.keys(dataObj); 
         for (let key of keys) {
@@ -52,22 +53,10 @@ function displayTopData(monthsData) {
         }
     }
     total += income + expenses + savings;  
-    totalP.textContent = `Total: ${total.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    })}`; 
-    expensesP.textContent = `Expenses: ${expenses.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    })}`; 
-    incomeP.textContent = `Income: ${income.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    })}`; 
-    savingsP.textContent = `Savings: ${savings.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    })}`; 
+    totalP.textContent = makeMoneyString('Total', total);
+    expensesP.textContent = makeMoneyString('Expenses', expenses);
+    incomeP.textContent = makeMoneyString('Income', income);
+    savingsP.textContent = makeMoneyString('Savings', savings);
     
     topTotal.append(totalP);
     topExpense.append(expensesP); 
@@ -78,3 +67,10 @@ function displayTopData(monthsData) {
 
 displayTopData(allMonthData); 
 
+
+function makeMoneyString(word, money) {
+    `${word}: ${money.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })}`; 
+}

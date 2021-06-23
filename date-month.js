@@ -5,12 +5,11 @@ export function checkMonth() {
 
     const currentMonth = new Date().getMonth(); 
     const user = getCurrentUser(); 
-    if (user.month !== currentMonth) {
-        return false; 
-    }
-    return true;
+
+    return user.month === currentMonth;
 }
 
+// nice use of sub-functions here!
 export function updateMonth() {
     const currentUser = getCurrentUser(); 
     if (!checkMonth()) {

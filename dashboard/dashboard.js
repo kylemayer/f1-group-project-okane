@@ -45,10 +45,8 @@ enterButton.addEventListener('click', () => {
 
 const userGreetingDiv = document.querySelector('#userGreeting'); 
 
-function userGreeting() {
-    userGreetingDiv.textContent = `Welcome ${user.name}`; 
-} 
-userGreeting(); 
+// this function is so small and only called once--no need for it :)
+userGreetingDiv.textContent = `Welcome ${user.name}`; 
 
 logoutButton.addEventListener('click', () => {
     logout();
