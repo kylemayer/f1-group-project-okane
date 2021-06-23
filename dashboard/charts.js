@@ -3,7 +3,6 @@ import { getCurrentUser } from '../local-storage.js';
 const expensesChart = document.querySelector('#expenses-chart').getContext('2d');
 expensesChart.canvas.width = '300px';
 expensesChart.canvas.height = '300px';
-const incomeChart = document.querySelector('#income-chart');
 const subsChart = document.querySelector('#subs-chart');
 
 const month = new Date().getMonth() + 1;
@@ -18,6 +17,7 @@ const entValue = getTotal('entertainment', 'expenses');
 
 function getTotal(category, type) {
     let accumulator = 0;
+    // awesome use of your data model! this is not an easy thing to plan out
     for (let item of user[month][type]) {
         if (category === item.category)
             accumulator = accumulator + Number(item.value);
@@ -37,6 +37,8 @@ const expenses = {
 
 if (foodValue) {
     // expenses.labels.push('Food');
+    // seeing a lot of repeated logic throughout this file!
+    // I'd definitely like to see a util function to prevent this duplication. Also, does chart.js require an array of datasets, even if you have only one?
     expenses.datasets[0].data.push(foodValue);
     expenses.datasets[0].backgroundColor.push('#FFADAD');
 }
@@ -80,15 +82,45 @@ const bankTotal = getTotal('bank', 'income');
 const salaryTotal = getTotal('salary', 'income');
 const otherTotal = getTotal('others', 'income');
 
-const income = {
-    labels: [],
-    datasets: [{
-        label: 'Income',
-        data: [],
-        backgroundColor: [],
-        hoverOffset: 1
-    }]
-};
+
+// something along these lines would allow you to remove a lot of the duplication in this file. Pass in an array of the totals [bankTotal, salaryTotal, otherTotal] to get this working: 
+
+/* makeChart(
+    [bankTotal, salaryTotal, otherTotal], 
+    'Income', 
+    '#income-chart')
+*/
+function makeChart(totals, label, DOMid) {
+    const chartEl = document.querySelector(DOMid);
+
+    const chartData = {
+        labels: [],
+        datasets: [{
+            label: label,
+            data: [],
+            backgroundColor: [],
+            hoverOffset: 1
+        }]
+    };
+    
+    for (let total of totals) {
+        if (total) {
+            // income.labels.push('Bank');
+            chartData.datasets[0].data.push(bankTotal);
+            chartData.datasets[0].backgroundColor.push(getRandomColor());
+        }
+    }
+
+    const config = {
+        type: 'pie',
+        data: chartData,
+    };
+    
+    new Chart(
+        chartEl,
+        config
+    );
+}
 
 if (bankTotal) {
     // income.labels.push('Bank');

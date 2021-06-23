@@ -16,6 +16,7 @@ const insuranceValue = getTotal('insurance', 'expenses');
 const healthValue = getTotal('medical', 'expenses');
 const entValue = getTotal('entertainment', 'expenses');
 
+// seems like you should import this function from your charts.js file instead of declaring it here a second time
 function getTotal(category, type) {
     let accumulator = 0;
     for (let item of user[month][type]) {
@@ -25,6 +26,7 @@ function getTotal(category, type) {
     return accumulator;
 }
 
+// This file is very similar to charts.js. it would be good to import and use the same function i recomennded in charts.js here to prevent this duplication.
 const expenses = {
     labels: [],
     datasets: [{

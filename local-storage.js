@@ -50,6 +50,7 @@ export function setUser(user) {
 
 export function findById(someArray, Id) {
     for (let item of someArray) {
+        // nice job remembering to Number()
         if (item.id === Number(Id)) {
             return (item);
         }

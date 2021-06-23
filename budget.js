@@ -17,6 +17,8 @@ if (currentUser.month !== (new Date().getMonth() + 1)) {
     setUser(currentUser);
 }
 
+
+
 form.addEventListener('submit', (e) => {
     e.preventDefault(); 
 
@@ -38,6 +40,7 @@ form.addEventListener('submit', (e) => {
     }
     const capitalizedUserName = capitalizedName(name);     
 
+    // nice error handling!
     if (deficit === 'select' && surplus === 'select' && savings === 'select') {
         alert('Must select one from the dropdown'); 
         return; 
@@ -49,62 +52,56 @@ form.addEventListener('submit', (e) => {
     
     }
 
-    if (deficit === 'select' && savings === 'select') {
-        const userData = {
+    function makeUserObject(category) {
+        return {
             id: randomNumber(), 
             name: capitalizedUserName, 
-            category: surplus,
+            category,
             value: amount, 
             description: description
         };
+    }
+
+    // great work wrangling all this state! no easy task!
+    if (deficit === 'select' && savings === 'select') {
+        const userData = makeUserObject(surplus);
         currentUser[currentMonth].income.push(userData);
     }
 
     if (surplus === 'select' && savings === 'select') {
-        const userData = {
-            id: randomNumber(), 
-            name: capitalizedUserName, 
-            category: deficit,
-            value: amount, 
-            description: description
-        };
+        const userData = makeUserObject(deficit);
+
         currentUser[currentMonth].expenses.push(userData);
     }
 
     if (surplus === 'select' && deficit === 'select') {
-        const userData = {
-            id: randomNumber(), 
-            name: capitalizedUserName, 
-            category: savings,
-            value: amount, 
-            description: description
-        };
+        const userData = makeUserObject(savings);
+
         currentUser[currentMonth].savings.push(userData);
     }
     setUser(currentUser);
 }); 
 
+// these two functions are so similar, let's refactor into a single function
 export function getTotalMoney() {
-    const user = getCurrentUser();
-    const currentMonth = user.month;
-    let total = 0;
-    for (let item of user[currentMonth].income) {
-        total = total + item.value;
-    }
-    return (total);
+    return getTotal('money');
 }
 
 export function getTotalExpenses() {
-    const user = getCurrentUser();
-    const currentMonth = user.month;
-    let total = 0;
-    for (let item of user[currentMonth].expenses) {
-        total = total + item.value;
-    }
-    return (total);
+    return getTotal('expenses');
 }
 
 
+function getTotal(key) {
+    const user = getCurrentUser();
+    const currentMonth = user.month;
+    let total = 0;
+    for (let item of user[currentMonth][key]) {
+        total = total + item.value;
+    }
+    return (total);
+
+}
 
 
 
